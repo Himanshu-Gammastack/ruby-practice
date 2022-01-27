@@ -29,8 +29,6 @@ class Sales
        if !(item.include? "book" or item.include? "chocolate" or item.include? "headache" or item.include? "chocolates")
          sales_tax=itemPrice * 0.1
        end
-        #puts import_tax
-        #puts sales_tax
        @totalAmount = (@totalAmount.to_f + itemPrice.to_f + import_tax.to_f + sales_tax.to_f)
        @totalSalesTax = @totalSalesTax.to_f + import_tax.to_f + sales_tax.to_f
        item = item.gsub(itemPrice.to_s,(itemPrice.to_f+import_tax.to_f+sales_tax.to_f).to_s)
