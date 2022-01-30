@@ -3,11 +3,11 @@ class TakeInput
     @products = []
     puts "Enter input"
     loop do
-      item = gets.chomp
-      if item.empty?
+      product = gets.chomp
+      if product.empty?
         break
       end
-      @products << item
+      @products << product
     end
     @products
   end
