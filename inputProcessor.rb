@@ -1,17 +1,17 @@
 class InputProcessor
-  def initialize(items)
-    @items = items
+  def initialize(products)
+    @products = products
   end
   def process
-    @items_array = []
-    @items.each do |item|
-      item_hash = {}
-      item_hash[:quantity] = item.split[0].to_i
-      item_hash[:name] = item.split(" at ").first.delete("/1-9/").strip
-      item_hash[:price] =item.split[-1].to_f
+    @product_hash_array = []
+    @products.each do |product|
+      product_hash = {}
+      product_hash[:quantity] = product.split[0].to_i
+      product_hash[:name] = product.split(" at ").first.delete("/1-9/").strip
+      product_hash[:price] =product.split[-1].to_f
 
-      @items_array << item_hash
+      @product_hash_array << product_hash
     end
-    @items_array
+    @product_hash_array
   end
 end
