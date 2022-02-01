@@ -5,6 +5,6 @@ File.open("friends.txt", "r") do |file|
 end
 file = File.open("friends.txt", "a")
 file.write("krishna raghuwanshi \n")
-file.close()
+file.close
 file = File.open("friends.txt", "r")
-puts file.read()
+puts file.read
