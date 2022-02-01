@@ -7,10 +7,9 @@ class CalculateTax
   def calculate
     tax_free_products = %w(book, chocolate, headache, chocolates)
     @products.each do |product|
-       product_tax = 0.0
-      if product[:name].include? "imported" then product_tax += 0.05 end
-      if (product[:name].split.intersection(tax_free_products)).empty?
-        then  product_tax += 0.1 end
+      product_tax = 0.0
+      product_tax += 0.05 if product[:name].include? "imported"
+      product_tax += 0.1 if (product[:name].split.intersection(tax_free_products)).empty?
       @total_amount += product[:price] + product[:price] * product_tax
       @total_tax += product[:price] * product_tax
       puts "#{product[:quantity].to_s}  #{product[:name]}  #{(product[:price] + product[:price] * product_tax).to_s}"
