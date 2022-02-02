@@ -4,13 +4,9 @@ no_of_element.times do |item|
   num = gets.chomp.to_i
   arr[item] = num
 end
-frequency = Hash.new
+frequency = Hash.new(0)
 for e in arr do
-   if !frequency.key?(e)
-      frequency[e] = 1
-   else
-     frequency[e] = 1 + frequency[e]
-   end
+  frequency[e] = 1 + frequency[e]
 end
 
 frequency.each do |key, value|
